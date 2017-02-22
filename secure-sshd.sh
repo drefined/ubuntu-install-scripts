@@ -8,8 +8,7 @@ echo "Enable AuthorizedKeysFile"
 sed -re 's/^(\#)(AuthorizedKeysFile)([[:space:]]+)(.*)/\2\3\4/' -i.`date -I` /etc/ssh/sshd_config
 
 cat >> $HOME/.ssh/authorized_keys << EOF
-
-** YOUR id_rsa.proxy.pub HERE ***
+$1
 
 EOF
 

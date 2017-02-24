@@ -20,22 +20,20 @@ fi
 
 echo "Extracting ..."
 
-tar -C "$HOME" -xzf /tmp/go.tar.gz
+tar -C "$HOME" -xzvf /tmp/go.tar.gz
 
 echo "Setting up GOROOT ..."
-mv "$HOME/go" "$HOME/.go"
+mv "$HOME/go" /usr/local
 
 touch "$HOME/.bashrc"
 {
     echo '# GoLang'
-    echo 'export GOROOT=$HOME/.go'
-    echo 'export PATH=$PATH:$GOROOT/bin'
-    echo 'export GOPATH=/opt/go'
-    echo 'export PATH=$PATH:$GOPATH/bin'
+    echo 'export GOPATH=$HOME/.go'
+    echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
 } >> "$HOME/.bashrc"
 
 echo "Setting up GOPATH ..."
-mkdir -p /opt/go/{src,pkg,bin}
+mkdir -p $HOME/.go{src,pkg,bin}
 
 echo "Cleaning up $DOWNLOAD_FILE ..."
 rm -f /tmp/go.tar.gz

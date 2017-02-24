@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+USER=$1
+GROUP=$2
+
 go get -u github.com/cybozu-go/usocksd/...
 
 cat > /etc/usocksd.toml << EOF
@@ -21,6 +24,8 @@ Description=SOCKS5 Proxy Server
 After=network.target
 
 [Service]
+User=$USER
+Group=$GROUP
 ExecStart=/opt/go/bin/usocksd -f /etc/usocksd.toml
 
 [Install]

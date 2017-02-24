@@ -20,7 +20,7 @@ fi
 
 echo "Extracting ..."
 
-tar -C "$HOME" -xzvf /tmp/go.tar.gz
+tar -C "$HOME" -xzf /tmp/go.tar.gz
 
 echo "Setting up GOROOT ..."
 mv "$HOME/go" /usr/local

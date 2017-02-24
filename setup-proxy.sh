@@ -13,10 +13,12 @@ wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/in
 chmod +x install-golang-64bit.sh
 ./install-golang-64bit.sh
 
+. $HOME/.bashrc
+
 wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/install-usocksd.sh
 chmod +x install-usocksd.sh
 ./install-usocksd.sh $USER $GROUP
 
 wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/secure-sshd.sh
 chmod +x secure-sshd.sh
-./secure-sshd.sh $SSH_PUB_KEY
+./secure-sshd.sh "$SSH_PUB_KEY"

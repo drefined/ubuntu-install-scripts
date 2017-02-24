@@ -13,5 +13,5 @@ $ ssh-keygen -t rsa -b 4096 -C "somebody@example.com" -f /home/ubuntu/.ssh/id_rs
 ```bash
 $ wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/setup-proxy.sh
 $ chmod +x setup-proxy.sh
-$ ./setup-proxy.sh $USER $GROUP $PASS $SSH_PUB_KEY
+$ ./setup-proxy.sh $USER $GROUP $PASS "$SSH_PUB_KEY"
 ```

@@ -4,7 +4,7 @@ set -e
 USER=$1
 GROUP=$2
 
-go get -u github.com/cybozu-go/usocksd/...
+/usr/local/go/bin/go get -u github.com/cybozu-go/usocksd/...
 
 cat > /etc/usocksd.toml << EOF
 [log]
@@ -32,5 +32,8 @@ ExecStart=/opt/go/bin/usocksd -f /etc/usocksd.toml
 WantedBy=multi-user.target
 
 EOF
+
+touch /var/log/usocksd.log
+chown $USER:$GROUP /var/log/usocksd.log
 
 service usocksd start

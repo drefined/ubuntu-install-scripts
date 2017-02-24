@@ -13,8 +13,6 @@ wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/in
 chmod +x install-golang-64bit.sh
 ./install-golang-64bit.sh
 
-. $HOME/.bashrc
-
 wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/install-usocksd.sh
 chmod +x install-usocksd.sh
 ./install-usocksd.sh $USER $GROUP

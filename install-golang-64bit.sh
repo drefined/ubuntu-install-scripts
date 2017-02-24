@@ -28,12 +28,12 @@ mv "$HOME/go" /usr/local
 touch "$HOME/.bashrc"
 {
     echo '# GoLang'
-    echo 'export GOPATH=$HOME/.go'
+    echo 'export GOPATH=/opt/go'
     echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin'
 } >> "$HOME/.bashrc"
 
 echo "Setting up GOPATH ..."
-mkdir -p $HOME/.go{src,pkg,bin}
+mkdir -p /opt/go/{src,pkg,bin}
 
 echo "Cleaning up $DOWNLOAD_FILE ..."
 rm -f /tmp/go.tar.gz

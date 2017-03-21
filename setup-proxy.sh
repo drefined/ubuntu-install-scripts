@@ -21,4 +21,4 @@ chmod +x install-usocksd.sh
 
 wget https://raw.githubusercontent.com/drefined/ubuntu-install-scripts/master/secure-sshd.sh
 chmod +x secure-sshd.sh
-./secure-sshd.sh "$SSH_PUB_KEY"
+./secure-sshd.sh $USER $GROUP "$SSH_PUB_KEY"
